@@ -110,5 +110,5 @@ rm_macos_fix () {
 
 # Hack because of annoying macos arg order
 alias rm=rm_macos_fix
-alias dots="git --git-dir=$HOME/.cfg --work-tree=$HOME"
+alias dots="git --git-dir=$HOME/.dots-git --work-tree=$HOME"
 
