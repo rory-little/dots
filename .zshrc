@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="idlys-boreal"
+ZSH_THEME="random"
 
 # Ones I like:
 #ZSH_THEME=("norm")
@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+[[ -f .local_aliases ]] && source .local_aliases
+
 rm_macos_fix () {
   rm $@[-1] $@[1,-2]
 }
