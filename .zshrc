@@ -17,7 +17,10 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "idlys-boreal" 
+                              "idlys-tropical" 
+                              "idlys-arctic"
+                              "idlys-eve" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
