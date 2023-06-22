@@ -6,9 +6,12 @@ if [[ ! -d $HOME/.oh-my-zsh ]]; then
 fi
 
 shitty_absdir="$(pwd)/$(dirname $0)"
+omz_theme_dir=$HOME/.oh-my-zsh/themes
+
+rm $omz_theme_dir/idlys-*
 
 for f in "${shitty_absdir}"/*.zsh-theme; do
   name=$(basename $f)
   echo "Linking ${name}"
-  ln -s $f $HOME/.oh-my-zsh/themes/$name
+  ln -s $f $omz_theme_dir/$name
 done
