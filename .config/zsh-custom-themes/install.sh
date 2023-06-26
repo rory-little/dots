@@ -8,7 +8,7 @@ fi
 shitty_absdir="$(pwd)/$(dirname $0)"
 omz_theme_dir=$HOME/.oh-my-zsh/themes
 
-rm $omz_theme_dir/idlys-*
+rm $omz_theme_dir/idlys-* -f
 
 for f in "${shitty_absdir}"/*.zsh-theme; do
   name=$(basename $f)
