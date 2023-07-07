@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[[ -f .local_aliases ]] && source .local_aliases
+[[ -f $HOME/.local_aliases ]] && source $HOME/.local_aliases
 
 rm_macos_fix () {
   rm $@[-1] $@[1,-2]
