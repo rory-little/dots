@@ -119,3 +119,5 @@ alias rm=rm_macos_fix
 # For dotfiles bare repo - this annoying doesn't work with git completions
 alias dots="git --git-dir=$HOME/.dots-git --work-tree=$HOME"
 
+export COLORTERM=truecolor
+
