@@ -35,6 +35,6 @@ colors:
     cyan:    '0x8abeb7'
     white:   '0xc5c8c6'
 
-#env:
-  # Uncomment this if colors are being fucky
-  #TERM: xterm-256color
+env:
+ # Shit sucks if you don't do this, why is 'alacritty' the default???
+ TERM: xterm-256color
