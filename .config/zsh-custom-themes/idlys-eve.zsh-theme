@@ -19,9 +19,44 @@ get_dir_prefix() {
   [[ "${new_path}" != "." ]] && [[ "${new_path}" != "/" ]] && echo ${new_path}/
 }
 
+git_state_info() {
+  local stat_output
+
+  stat_output=$(git status 2> /dev/null)
+
+  case "$stat_output" in
+    *"bisecting"*)
+      printf "bisect"
+      ;;
+    *"Revert"*|*"reverting"*)
+      printf "revert"
+      ;;
+    *"Cherry-pick"*|*"cherry-picking"*)
+      printf "cherry-pick"
+      ;;
+    *"rebas"*)
+      printf "rebase"
+      ;;
+    *"middle of an am"*)
+      printf "am"
+      ;;
+    *"unmerged"*|*"still merging"*)
+      printf "merge"
+      ;;
+  esac
+}
+
+do_git_state() {
+  local info
+  info=$(git_state_info)
+  if [[ -n $info ]]; then
+    printf " ($info)"
+  fi
+}
+
 host_info='%B%F{magenta}%n%b%F{cyan}@%m%f'
 dir_info='%F{magenta}$(get_dir_prefix)%B%1~%b%f'
-vc_info='$(git_prompt_info)'
+vc_info='$(git_prompt_info)%F{magenta}$(do_git_state)%f'
 
 PROMPT="${host_info} ${dir_info}${vc_info} "
 
