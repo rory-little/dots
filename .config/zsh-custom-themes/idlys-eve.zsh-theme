@@ -25,6 +25,8 @@ git_state_info() {
   stat_output=$(git status 2> /dev/null)
 
   case "$stat_output" in
+    "On branch"*)
+      ;;
     *"bisecting"*)
       printf "bisect"
       ;;
