@@ -108,14 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -f $HOME/.local_aliases ]] && source $HOME/.local_aliases
 
-rm_macos_fix () {
-  rm $@[-1] $@[1,-2]
-}
-
-
-# Hack because of annoying macos arg order
-alias rm=rm_macos_fix
-
 # For dotfiles bare repo - this annoying doesn't work with git completions
 alias dots="git --git-dir=$HOME/.dots-git --work-tree=$HOME"
 
